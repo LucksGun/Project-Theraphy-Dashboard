@@ -1,6 +1,3 @@
-// Initialize Firebase
-const app = firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -13,3 +10,7 @@ const firebaseConfig = {
     appId: "1:674828852767:web:5ddcb6accb5c681325bf2a",
     measurementId: "G-J2QYRQ8WTK"
   };
+
+  // Initialize Firebase
+const app = firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
