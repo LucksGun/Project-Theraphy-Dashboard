@@ -35,11 +35,19 @@
     <style>
         body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
             background-color: #f4f4f4;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 30px; /* Added spacing between title and form */
+            color: #333;
+            text-align: center;
         }
 
         .container {
@@ -52,16 +60,12 @@
             text-align: center;
         }
 
-        h1 {
-            font-size: 2em;
-            margin-bottom: 1em;
-            color: #333;
-        }
-
         form {
             display: flex;
             flex-direction: column;
             align-items: stretch;
+            width: 100%;
+            max-width: 300px;
         }
 
         input[type="password"] {
@@ -85,6 +89,11 @@
             transition: background-color 0.2s;
             width: 100%;
         }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
         label {
             margin-top: 0.5rem;
             margin-bottom: 0.5rem;
@@ -95,18 +104,16 @@
 </head>
 
 <body>
-    
-        <h1>Project Theraphy</h1>
-        
-            
-                <form id="code-form">
-                    <label for="code">Enter Code:</label>
-                    <input type="password" id="code" name="code" required>
-                    <button type="submit">Enter</button>
-                </form>
-            
-        
-    
+    <h1>Project Therapy</h1>
+
+    <div class="container">
+        <form id="code-form">
+            <label for="code">Enter Code:</label>
+            <input type="password" id="code" name="code" required>
+            <button type="submit">Enter</button>
+        </form>
+    </div>
+
 </body>
 
 </html>
