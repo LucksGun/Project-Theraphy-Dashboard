@@ -1,26 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="../assets/css/style.css">
-     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background-color: #f8f9fa;
-            flex-direction: column;
-        }
+    <style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #f4f4f4;
+        flex-direction: column;
+    }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the user ID from localStorage
+            const userId = localStorage.getItem('userId');
+
+            let content = '';
+            if (userId === 'user1') {
+                content = '<h1>Welcome, User 1!</h1><p>This is User 1\'s dashboard.</p>';
+            } else if (userId === 'user2') {
+                content = '<h1>Welcome, User 2!</h1><p>This is User 2\'s dashboard.</p>';
+            } else if (userId === 'user3') {
+                content = '<h1>Welcome, User 3!</h1><p>This is User 3\'s dashboard.</p>';
+            } else {
+                content = '<h1>Unauthorized</h1><p>Please enter a valid code.</p>';
+                window.location.href = "index.html" //Redirect if no user.
+            }
+
+            // Set the content of the dashboard based on the user ID
+            document.getElementById('dashboard-content').innerHTML = content;
+        });
+    </script>
 </head>
+
 <body>
     
-        <h1>Project Theraphy Dashboard</h1>
-        <p>This is the dashboard content.</p>
+        
+            
+        
     
 </body>
+
 </html>

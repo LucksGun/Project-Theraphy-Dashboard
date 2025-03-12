@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enter Code</title>
+    <title>Sign In</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -15,10 +15,19 @@
                 event.preventDefault();
 
                 const enteredCode = codeInput.value;
-                // Array of allowed codes.  CHANGE THESE!
-                const allowedCodes = ["code1", "code2", "code3"];
+                // Define user codes and corresponding user IDs
+                const userCodes = {
+                    "67981111": "Thammaluck",
+                    "67981685": "piyaphot",
+                    "67981951": "pichaya"
+                };
 
-                if (allowedCodes.includes(enteredCode)) {
+                // Check if the entered code is valid and get the user ID
+                const userId = userCodes[enteredCode];
+
+                if (userId) {
+                    // Store the user ID in localStorage
+                    localStorage.setItem('userId', userId);
                     window.location.href = 'dashboard.html'; // Go to dashboard
                 } else {
                     alert('Incorrect code. Please try again.');
@@ -26,9 +35,8 @@
             });
         });
     </script>
-     <style>
-        /* Center the content */
-        body {
+    <style>
+         body {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -47,18 +55,11 @@
             text-align: center; /* Center-align text within the container */
         }
 
-        h1 {
-            font-size: 2em;
-            margin-bottom: 1em;
-            color: #333;
-        }
-
         form {
             display: flex;
             flex-direction: column; /* Stack form elements vertically */
             align-items: stretch; /* Make form elements take full width */
         }
-
         input[type="password"] {
             padding: 10px;
             margin-bottom: 15px;
@@ -80,11 +81,6 @@
             transition: background-color 0.2s;
             width: 100%; /* Make button full width */
         }
-
-        button[type="submit"]:hover {
-            background-color: #0056b3; /* Darker blue on hover */
-        }
-
         label {
             margin-top: 0.5rem;
             margin-bottom: 0.5rem;
@@ -96,14 +92,11 @@
 
 <body>
     
-        <h1>Project Theraphy</h1>
         
             
                 <form id="code-form">
-                    
-                        <label for="code">Enter Code:</label>
-                        <input type="password" id="code" name="code" required>
-                    
+                    <label for="code">Enter Code:</label>
+                    <input type="password" id="code" name="code" required>
                     <button type="submit">Enter</button>
                 </form>
             

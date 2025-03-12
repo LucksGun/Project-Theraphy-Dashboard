@@ -7,6 +7,7 @@ body {
     min-height: 100vh;
     margin: 0;
     background-color: #f4f4f4;
+    flex-direction: column; /* Add this line */
 }
 
 .container {
@@ -31,7 +32,7 @@ form {
     align-items: stretch;
 }
 
-input[type="password"] { /* Only style the password input */
+input[type="password"] {
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ddd;
@@ -56,6 +57,7 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #0056b3;
 }
+
 label {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
