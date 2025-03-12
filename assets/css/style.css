@@ -16,7 +16,7 @@ body {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Center-align text within the container */
+    text-align: center;
 }
 
 h1 {
@@ -31,8 +31,7 @@ form {
     align-items: stretch;
 }
 
-input[type="email"],
-input[type="password"] {
+input[type="password"] { /* Only style the password input */
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ddd;
@@ -57,23 +56,9 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #0056b3;
 }
-
-
 label {
-     margin-top: 0.5rem;
+    margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     display: block;
-     text-align: left;
-}
-#rememberMe-container{
     text-align: left;
-}
-
-#sign-out-button{
-    padding: 10px 15px;
-    background-color: #dc3545;
-    border: none;
-    color: white;
-    font-size: 1em;
-    border-radius: .25em;
 }

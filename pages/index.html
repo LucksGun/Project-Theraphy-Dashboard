@@ -4,12 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In</title>
+    <title>Enter Code</title>
     <link rel="stylesheet" href="../assets/css/style.css">
-    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-auth-compat.js"></script>
-    <script src="../assets/js/firebase-config.js"></script>
-    <script src="../assets/js/sign-in.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const codeForm = document.getElementById('code-form');
+            const codeInput = document.getElementById('code');
+
+            codeForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const enteredCode = codeInput.value;
+                const correctCode = "YABC"; // CHANGE THIS!!!
+
+                if (enteredCode === correctCode) {
+                    window.location.href = 'dashboard.html'; // Go to dashboard
+                } else {
+                    alert('Incorrect code. Please try again.');
+                }
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -17,23 +32,12 @@
         <h1>Project Theraphy</h1>
         
             
-                <form id="sign-in-form">
+                <form id="code-form">
                     
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
+                        <label for="code">Enter Code:</label>
+                        <input type="password" id="code" name="code" required>
                     
-
-                    
-                        <label for="password">Password:</label>
-                        <input type="password" id="password" name="password" required>
-                    
-
-                    
-                        <input type="checkbox" id="rememberMe" name="rememberMe">
-                        <label for="rememberMe">Remember me</label>
-                    
-
-                    <button type="submit">Sign In</button>
+                    <button type="submit">Enter</button>
                 </form>
             
         
