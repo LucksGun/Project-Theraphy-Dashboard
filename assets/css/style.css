@@ -22,7 +22,7 @@ body {
 
 h1 {
     font-size: 2em;
-    margin-bottom: 1em;
+    margin-bottom: 2em; /* Increased margin-bottom */
     color: #333;
 }
 
