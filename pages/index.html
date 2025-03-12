@@ -15,9 +15,10 @@
                 event.preventDefault();
 
                 const enteredCode = codeInput.value;
-                const correctCode = "YABC"; // CHANGE THIS!!!
+                // Array of allowed codes.  CHANGE THESE!
+                const allowedCodes = ["code1", "code2", "code3"];
 
-                if (enteredCode === correctCode) {
+                if (allowedCodes.includes(enteredCode)) {
                     window.location.href = 'dashboard.html'; // Go to dashboard
                 } else {
                     alert('Incorrect code. Please try again.');
@@ -25,6 +26,72 @@
             });
         });
     </script>
+     <style>
+        /* Center the content */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4; /* Light gray background */
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px; /* Limit width for better readability */
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Center-align text within the container */
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 1em;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column; /* Stack form elements vertically */
+            align-items: stretch; /* Make form elements take full width */
+        }
+
+        input[type="password"] {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1em;
+            width: 100%; /* Make inputs full width */
+            box-sizing: border-box; /* Include padding and border in the width */
+        }
+
+        button[type="submit"] {
+            padding: 10px 15px;
+            background-color: #007bff; /* Blue button */
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.2s;
+            width: 100%; /* Make button full width */
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        label {
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+            text-align: left;
+        }
+    </style>
 </head>
 
 <body>
