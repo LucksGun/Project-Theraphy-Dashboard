@@ -21,14 +21,14 @@
     <script src="../assets/js/firebase-config.js"></script>
     <script src="../assets/js/sign-in.js"></script>
     <style>
-        /* Center the content */
         body {
             display: flex;
+            flex-direction: column; /* Stack elements vertically */
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            background-color: #f8f9fa; /* Light gray background */
+            background-color: #f8f9fa;
         }
 
         .card {
@@ -37,60 +37,49 @@
             padding: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
+            text-align: center; /* Center-align text within the card */
         }
 
         .card-header {
             padding: 0;
             background: none;
             border: none;
-            text-align: center; /* Center the heading */
-        }
-        .card-header h4{
-            color: black;
-        }
-        /* Remove the social icons row*/
-        .row.mt-3{
-            display: none;
         }
 
+        .card-header h1 { /* Target the h1 specifically */
+            color: black;
+            font-size: 2em; /* Larger font size */
+            margin-bottom: 1rem; /* Space below the heading */
+        }
+         .card-header h4{
+            color:black;
+        }
         .input-group {
             margin-bottom: 15px;
         }
-        .page-header{
+        /*Hide social icons*/
+        .row.mt-3{
             display: none;
+        }
+        .page-header{
+            display:none;
         }
     </style>
 </head>
 
 <body class="bg-gray-200">
-    <main class="main-content mt-0">
         
             
                 <h1>Project Theraphy</h1>
+            
+            
                 
                     
+                        Sign in
+                    
+                    
                         
-                            
-                                Sign in
-                            
-                            
-                                
-                                    
-                                        <i class="fa fa-facebook text-white text-lg"></i>
-                                    
-                                
-                                
-                                    <i class="fa fa-github text-white text-lg"></i>
-                                
-                                
-                                
-                                    <i class="fa fa-google text-white text-lg"></i>
-                                
-                                
-                            
-                        
-                        
-                            
+                            <form role="form" class="text-start" id="sign-in-form">
                                 
                                      
                                     <input type="email" class="form-control" id="email" placeholder="Email" required>
@@ -108,12 +97,12 @@
                                     Sign
                                         in
                                 
-                            
+                            </form>
                         
                     
                 
             
-    </main>
+    
 </body>
 
 </html>
