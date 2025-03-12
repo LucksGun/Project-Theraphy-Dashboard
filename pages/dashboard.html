@@ -23,29 +23,40 @@
             const userId = localStorage.getItem('userId');
 
             let content = '';
-            if (userId === '67981111') {
-                content = '<h1>Welcome, User 1!</h1><p>This is Thammaluck\'s dashboard.</p>';
-            } else if (userId === '67981685') {
-                content = '<h1>Welcome, User 2!</h1><p>This is piyaphot\'s dashboard.</p>';
-            } else if (userId === '67981951') {
-                content = '<h1>Welcome, User 3!</h1><p>This is pichaya\'s dashboard.</p>';
+            if (userId === 'Thammaluck') {
+                content = `
+                    
+                        <h1>Welcome, Thammaluck!</h1>
+                        <p>This is Thammaluck's dashboard.</p>
+                        
+                    `;
+            } else if (userId === 'piyaphot') {
+                content = `
+                    
+                        <h1>Welcome, piyaphot!</h1>
+                        <p>This is piyaphot's dashboard.</p>
+                        
+                `;
+            } else if (userId === 'pichaya') {
+                content = `
+                    
+                        <h1>Welcome, pichaya!</h1>
+                        <p>This is pichaya's dashboard.</p>
+                        
+                `;
             } else {
                 content = '<h1>Unauthorized</h1><p>Please enter a valid code.</p>';
                 window.location.href = "index.html" //Redirect if no user.
             }
 
             // Set the content of the dashboard based on the user ID
-            document.getElementById('dashboard-content').innerHTML = content;
+            document.body.innerHTML = content;
         });
     </script>
 </head>
 
 <body>
     
-        
-            
-        
-    
-</body>
+        </body>
 
 </html>
