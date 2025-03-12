@@ -33,21 +33,15 @@
         });
     </script>
     <style>
+        /* Ensure everything is centered properly */
         body {
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+            height: 100vh;
             margin: 0;
             background-color: #f4f4f4;
-        }
-
-        h1 {
-            font-size: 2em;
-            margin-bottom: 30px; /* Added spacing between title and form */
-            color: #333;
-            text-align: center;
+            flex-direction: column;
         }
 
         .container {
@@ -60,12 +54,18 @@
             text-align: center;
         }
 
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
         form {
             display: flex;
             flex-direction: column;
             align-items: stretch;
             width: 100%;
-            max-width: 300px;
         }
 
         input[type="password"] {
@@ -95,7 +95,6 @@
         }
 
         label {
-            margin-top: 0.5rem;
             margin-bottom: 0.5rem;
             display: block;
             text-align: left;
@@ -113,7 +112,6 @@
             <button type="submit">Enter</button>
         </form>
     </div>
-
 </body>
 
 </html>
