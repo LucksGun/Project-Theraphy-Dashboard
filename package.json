@@ -37,6 +37,7 @@
     "url": "https://github.com/creativetimofficial/material-dashboard/issues"
   },
   "devDependencies": {
+    "@parcel/watcher": "^2.5.1",
     "firebase": "^11.4.0",
     "gulp": "5.0.0",
     "gulp-open": "3.0.1",
