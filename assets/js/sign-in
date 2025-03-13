@@ -6,16 +6,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     signInForm.addEventListener('submit', function(event) {
         event.preventDefault();
+        console.log("Form submitted"); // Add this
+
         const email = emailInput.value;
         const password = passwordInput.value;
 
+        console.log("Email:", email, "Password:", password); // Add this
+
         firebase.auth().signInWithEmailAndPassword(email, password)
             .then((userCredential) => {
-                // Signed in successfully
-                window.location.href = 'dashboard.html'; // Redirect to dashboard
+                console.log("Sign-in successful:", userCredential.user); // Add this
+                window.location.href = 'dashboard.html';
             })
             .catch((error) => {
-                // Handle errors
+                console.error('Sign-in error:', error.code, error.message); // Add this
                 alert('Error signing in: ' + error.message);
             });
     });
