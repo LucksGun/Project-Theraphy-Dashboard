@@ -9,54 +9,55 @@
     <style>
     body {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         min-height: 100vh;
         margin: 0;
         background-color: #f4f4f4;
         flex-direction: column;
+        padding-top: 70px;
     }
     </style>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', async function() {
+            // Load navbar
+            const response = await fetch('../components/navbar.html');
+            const navbarHtml = await response.text();
+            document.body.insertAdjacentHTML('afterbegin', navbarHtml);
+
             // Get the user ID from localStorage
             const userId = localStorage.getItem('userId');
+            const mainContent = document.getElementById('main-content');
 
             let content = '';
             if (userId === 'Thammaluck') {
                 content = `
-                    
-                        <h1>Welcome, Thammaluck!</h1>
-                        <p>This is Thammaluck's dashboard.</p>
-                        
-                    `;
+                    <h1>Welcome, Thammaluck!</h1>
+                    <p>This is Thammaluck's dashboard.</p>
+                `;
             } else if (userId === 'piyaphot') {
                 content = `
-                    
-                        <h1>Welcome, piyaphot!</h1>
-                        <p>This is piyaphot's dashboard.</p>
-                        
+                    <h1>Welcome, piyaphot!</h1>
+                    <p>This is piyaphot's dashboard.</p>
                 `;
             } else if (userId === 'pichaya') {
                 content = `
-                    
-                        <h1>Welcome, pichaya!</h1>
-                        <p>This is pichaya's dashboard.</p>
-                        
+                    <h1>Welcome, pichaya!</h1>
+                    <p>This is pichaya's dashboard.</p>
                 `;
             } else {
                 content = '<h1>Unauthorized</h1><p>Please enter a valid code.</p>';
                 window.location.href = "index.html" //Redirect if no user.
             }
 
-            // Set the content of the dashboard based on the user ID
-            document.body.innerHTML = content;
+            // Set the content of the main area
+            mainContent.innerHTML = content;
         });
     </script>
 </head>
 
 <body>
-    
+    <div id="main-content"></div>
 </body>
 
 </html>
