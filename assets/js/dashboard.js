@@ -1,11 +1,15 @@
 // assets/js/dashboard.js
+console.log("dashboard.js loaded"); // Add this line
+
 document.addEventListener('DOMContentLoaded', function() {
+    console.log("DOMContentLoaded fired"); // Add this line
+
     firebase.auth().onAuthStateChanged((user) => {
+        console.log("onAuthStateChanged called", user); // Add this line
         if (user) {
             console.log('User is signed in:', user);
-            // User is signed in.  Stay on dashboard.
         } else {
-            // No user is signed in. Redirect to sign-in page.
+            console.log("User is NOT signed in - redirecting"); // Add this
             window.location.href = 'index.html';
         }
     });
