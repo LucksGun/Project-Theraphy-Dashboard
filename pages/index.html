@@ -6,39 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In</title>
     <link rel="stylesheet" href="../assets/css/style.css">
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const codeForm = document.getElementById('code-form');
-            const codeInput = document.getElementById('code');
-
-            codeForm.addEventListener('submit', function(event) {
-                event.preventDefault();
-
-                const enteredCode = codeInput.value;
-                const userCodes = {
-                    "67981111": "Thammaluck",
-                    "67981685": "piyaphot",
-                    "67981951": "pichaya"
-                };
-
-                const userId = userCodes[enteredCode];
-
-                if (userId) {
-                    localStorage.setItem('userId', userId);
-                    window.location.href = 'dashboard.html';
-                } else {
-                    alert('Incorrect code. Please try again.');
-                }
-            });
-        });
-    </script>
+    
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+    <script src="../assets/js/firebase-config.js"></script>
+    <script src="../assets/js/sign-in.js"></script>
     <style>
-        /* Ensure everything is centered properly */
         body {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
             background-color: #f4f4f4;
             flex-direction: column;
@@ -56,18 +34,17 @@
 
         h1 {
             font-size: 2em;
-            margin-bottom: 20px;
+            margin-bottom: 1em;
             color: #333;
-            text-align: center;
         }
 
         form {
             display: flex;
             flex-direction: column;
             align-items: stretch;
-            width: 100%;
         }
 
+        input[type="email"],
         input[type="password"] {
             padding: 10px;
             margin-bottom: 15px;
@@ -89,12 +66,8 @@
             transition: background-color 0.2s;
             width: 100%;
         }
-
-        button[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-
         label {
+            margin-top: 0.5rem;
             margin-bottom: 0.5rem;
             display: block;
             text-align: left;
@@ -103,15 +76,20 @@
 </head>
 
 <body>
-    <h1>Project Therapy</h1>
-
-    <div class="container">
-        <form id="code-form">
-            <label for="code">Enter Code:</label>
-            <input type="password" id="code" name="code" required>
-            <button type="submit">Enter</button>
-        </form>
-    </div>
+    
+        <h1>Project Theraphy</h1>
+        
+            
+                <form id="sign-in-form">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    <button type="submit">Sign In</button>
+                </form>
+            
+        
+    
 </body>
 
 </html>

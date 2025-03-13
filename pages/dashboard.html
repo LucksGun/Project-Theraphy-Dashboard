@@ -7,55 +7,27 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <style>
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        margin: 0;
-        background-color: #f4f4f4;
-        flex-direction: column;
-    }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            flex-direction: column;
+        }
     </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get the user ID from localStorage
-            const userId = localStorage.getItem('userId');
-
-            let content = '';
-            if (userId === 'Thammaluck') {
-                content = `
-                    
-                        <h1>Welcome, Thammaluck!</h1>
-                        <p>This is Thammaluck's dashboard.</p>
-                        
-                    `;
-            } else if (userId === 'piyaphot') {
-                content = `
-                    
-                        <h1>Welcome, piyaphot!</h1>
-                        <p>This is piyaphot's dashboard.</p>
-                        
-                `;
-            } else if (userId === 'pichaya') {
-                content = `
-                    
-                        <h1>Welcome, pichaya!</h1>
-                        <p>This is pichaya's dashboard.</p>
-                        
-                `;
-            } else {
-                content = '<h1>Unauthorized</h1><p>Please enter a valid code.</p>';
-                window.location.href = "index.html" //Redirect if no user.
-            }
-
-            // Set the content of the dashboard based on the user ID
-            document.body.innerHTML = content;
-        });
-    </script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+    <script src="../assets/js/firebase-config.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
 </head>
 
 <body>
+    
+        <h1>Project Theraphy Dashboard</h1>
+        <button id="sign-out-button">Sign Out</button>
+        
     
 </body>
 
